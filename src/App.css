@@ -1,0 +1,334 @@
+@import "/src/styles/stars.css";
+
+/* ******************** portfolio-container ******************** */
+.portfolio-container {
+  position: relative;
+  width: 100vw;
+}
+
+/* hero section */
+.portfolio-container .hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.portfolio-container .hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(
+    180deg,
+    rgba(33, 40, 50, 0) 0%,
+    rgba(33, 40, 50, 1) 100%
+  );
+}
+
+.portfolio-container .hero > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.portfolio-container .hero h1 {
+  position: absolute;
+  left: 50%;
+  bottom: 0%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.2;
+  font-weight: 700;
+  opacity: 0;
+}
+
+.portfolio-container .hero h1 span:first-child {
+  text-indent: -23vw;
+  font-size: 88px;
+}
+.portfolio-container .hero h1 span:last-child {
+  text-indent: 15vw;
+  font-size: 120px;
+}
+
+.portfolio-container section {
+  width: 100%;
+}
+
+/* ******************** portfolio-contents ******************** */
+.portfolio-container > section:not(:first-child) {
+  padding: 120px 0;
+}
+
+.inner {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1100px;
+  /* border: 1px solid #fff; */
+}
+
+/* ******************** image-container ******************** */
+.image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  perspective: 0px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* ******************** about ******************** */
+/* about-title */
+.about .about-title {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  text-align: center;
+}
+
+.about .about-title h2 {
+  height: calc(36px * 1.5 * 2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+}
+
+.about .about-typed {
+  position: relative;
+  font-family: inherit;
+  font-size: 36px;
+  line-height: 1.4;
+  white-space: pre;
+}
+
+/* react-typed 커서 */
+.about .about-typed + .typed-cursor {
+  position: absolute;
+  right: -0.5em;
+  bottom: 0;
+}
+
+.about .about-title ul {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+.about .about-title .links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* about-list */
+.about .about-list {
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 50px 88px;
+  padding: 0 44px;
+}
+
+.about .about-list > li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: calc((100% - 88px) / 2);
+  padding: 32px;
+  border: 1px solid var(--color-primary);
+  border-radius: 16px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s ease;
+}
+
+.about .about-list > li.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about .about-list > li h3 {
+  font-family: "LibreBaskerville";
+  position: absolute;
+  top: 0;
+  left: 12px;
+  transform: translateY(-50%);
+  padding: 4px 10px;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--color-primary);
+  background-color: var(--color-midnight);
+}
+
+/* profile */
+.about .about-list .profile-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.about .about-list .profile-list li {
+  display: flex;
+  gap: 6px;
+}
+
+.about .about-list .profile-list li strong {
+  font-weight: bold;
+}
+
+/* career, educated */
+.about .about-list .career-list,
+.about .about-list .educated-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.about .about-list .career-list li,
+.about .about-list .educated-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.about .about-list .career-list li strong,
+.about .about-list .educated-list li strong {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+}
+
+.about .about-list .career-list li strong span,
+.about .about-list .educated-list li strong span {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--color-light-gray);
+}
+
+/* skills */
+.about .about-list .skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* ******************** projects ******************** */
+.projects h2 {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.projects .project-list {
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.projects .project-list > li {
+  display: flex;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s ease;
+}
+
+.projects .project-list > li.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ******************** publishing-projects ******************** */
+.portfolio-container > section.pub-projects {
+  padding-bottom: 100px;
+}
+
+.pub-projects h2 {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.pub-projects .inner {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+.pub-projects .inner .move-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s ease;
+}
+
+.pub-projects .inner .move-item.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pub-projects .inner .swiper-button-prev,
+.pub-projects .inner .swiper-button-next {
+  top: 54%;
+  color: var(--color-white);
+  transition: 0.3s;
+}
+
+.pub-projects .inner .swiper-button-prev {
+  left: -65px;
+}
+
+.pub-projects .inner .swiper-button-next {
+  right: -65px;
+}
+
+.pub-projects .inner .swiper-button-prev:hover,
+.pub-projects .inner .swiper-button-next:hover {
+  color: var(--color-secondary);
+}
+
+.pub-projects .inner .pub-project-swiper {
+  padding: 100px 10px 60px;
+}
+
+.pub-projects .inner .pub-project-swiper .swiper-pagination {
+  bottom: 0;
+}
+
+.pub-projects
+  .inner
+  .pub-project-swiper
+  .swiper-pagination
+  .swiper-pagination-bullet.swiper-pagination-bullet {
+  background: var(--color-light-gray);
+}
+
+.pub-projects
+  .inner
+  .pub-project-swiper
+  .swiper-pagination
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: var(--color-secondary);
+}
